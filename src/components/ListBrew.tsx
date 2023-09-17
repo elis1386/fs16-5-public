@@ -87,14 +87,14 @@ const ListBrew = () => {
         />
       </Search>
       <TableContainer component={Paper}>
-        <Table>
+        <Table sx={{ width: { xs: "90%", sm: "90%" } }}>
           <TableHead>
             <TableRow>
-              <TableCell>Logo</TableCell>
-              <TableCell>Name</TableCell>
-              <TableCell>City</TableCell>
-              <TableCell>Street</TableCell>
-              <TableCell>Actions</TableCell>
+              <TableCell sx={{ padding: { sm: "3px" } }}>Logo</TableCell>
+              <TableCell sx={{ padding: { sm: "3px" } }}>Name</TableCell>
+              <TableCell sx={{ padding: { sm: "3px" } }}>City</TableCell>
+              <TableCell sx={{ padding: { sm: "3px" } }}>Street</TableCell>
+              <TableCell sx={{ padding: { sm: "3px" } }}>Actions</TableCell>
             </TableRow>
           </TableHead>
           {error && <Error error={error} />}
@@ -103,20 +103,24 @@ const ListBrew = () => {
 
             {filteredBreweries.map((brewery) => (
               <TableRow key={brewery.id}>
-                <TableCell>
+                <TableCell sx={{ padding: { sm: "3px" } }}>
                   <Avatar sx={{ bgcolor: "purple" }}>
                     <SportsBar />
                   </Avatar>
                 </TableCell>
-                <TableCell>
+                <TableCell sx={{ padding: { sm: "3px" } }}>
                   <Link to={`/brewery/${brewery.id}`}>
                     {removePrefix(brewery.name)}
                   </Link>
                 </TableCell>
 
-                <TableCell>{brewery.city}</TableCell>
-                <TableCell>{brewery.street}</TableCell>
-                <TableCell>
+                <TableCell sx={{ padding: { sm: "3px" } }}>
+                  {brewery.city}
+                </TableCell>
+                <TableCell sx={{ padding: { sm: "3px" } }}>
+                  {brewery.street}
+                </TableCell>
+                <TableCell sx={{ padding: { sm: "3px" } }}>
                   <IconButton aria-label="add to favorites">
                     <Checkbox
                       icon={<FavoriteBorder />}

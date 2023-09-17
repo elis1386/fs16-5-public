@@ -52,12 +52,10 @@ const SingleBrew = () => {
           'url("https://images.unsplash.com/photo-1628361747763-78c68afe7fbc?ixlib=rb-4.0.3")',
         backgroundSize: "cover",
         backgroundPosition: "center",
-      }}
-    >
+      }}>
       <Card
         key={selectedBrewery.id}
-        sx={{ width: "40%", margin: "3em" }}
-      >
+        sx={{ margin: "3em", width: { xs: "75%", sm: "40%" } }}>
         <CardHeader
           avatar={
             <Avatar sx={{ bgcolor: "red" }} aria-label="recipe">
